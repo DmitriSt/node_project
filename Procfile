@@ -1,1 +1,1 @@
-web: node ./bin/www
+web: DEBUG=node_project:* npm start
