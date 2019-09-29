@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import ReactDOM from "react-dom";
-import { database } from '../../src/firebase';
+import { database } from './firebase';
+import  ParentComponent  from './components/parentComponent.jsx';
+
+// page 129
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +19,7 @@ class App extends Component {
 
   componentDidMount() {
     database.ref().on('value', (snapshot) => {
-      console.log('hello');
+      // console.log('hello');
       this.setState({
         data: snapshot.val()
       });
@@ -47,6 +50,7 @@ class App extends Component {
           <input type="text" value={this.state.newData} onChange={this.handleChange} />
           <input type="submit" />
         </form>
+        <ParentComponent />
       </div>
     )
   }

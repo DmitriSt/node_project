@@ -8,11 +8,11 @@ module.exports = {
     port: 3000
   },
   devtool: 'cheap-module-eval-source-map',
-  entry: './code/js/index.js',
+  entry: './src/index.js',
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: [/\.js$/, /\.jsx$/],
         loaders: ['babel-loader'],
         exclude: /node_modules/
       },
